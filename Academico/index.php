@@ -8,7 +8,7 @@
     </head>
     <body>
         <h2>Sistema de ensino</h2>
-        <form method="get" action="index.php">
+        <form method="post" action="UserDetails.php">
             <table>
                 <tr>
                     <td>Matricula (número):</td>
@@ -80,7 +80,7 @@
             <?php
             if ($_GET) {
                 
-                print_r($_GET); //printa tudo do array
+                //print_r($_GET); //printa tudo do array
                 @$matricula /*nome da variáve*/= $_GET['matricula'/*índice da variável*/];
                 @$nome = $_GET['nome'];
                 @$turma = $_GET['turma'];
