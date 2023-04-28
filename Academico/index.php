@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-
 <html>
     <head>
-        <meta charset="UTF-8">
-        <title>Sistema de ensino</title>
-        <link href="css/default.css" rel="stylesheet" type="text/css"/>
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+       
+        <script src="js/jquery.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <meta charset="UTF-8"
+        <title>Sistema de ensino</title>   
+        
     </head>
     <body>
         <h2>Sistema de ensino</h2>
         <form method="post" action="UserDetails.php">
-            <table>
+            <table class="table-bordered">
                 <tr>
                     <td>Matricula (número):</td>
                     <td>
@@ -51,9 +54,8 @@
                 <tr>
                     <td>Endereço:</td>
                     <td>
-                        <input type="text" name="endereco"
-                               placeholder="Endereço">
-                    </td>
+                         <input type="text" name="endereco" placeholder="Endereço">
+                     </td>
                     <td></td>
                 </tr>
                 <tr>
@@ -87,9 +89,8 @@
                 @$telefone = $_GET['telefone'];
                 @$endereco = $_GET['endereco'];
                 @$estado= $_GET['estado'];
-                
-                
-                
+
+               
                 
                 if(empty($matricula)||empty($nome)||empty($turma)||empty($telefone)||empty($endereco)||empty($estado)){
                     echo ('<div class="alert"> Todos os campos são obrigatórios</div>');
@@ -97,7 +98,7 @@
                     $result = "<br>Matrícula: ".$matricula. "<br>Nome: ".$nome. "<br>Turma".$turma. "<br>Número de telefone: ".$telefone. "<br>Endereço: ".$endereco. "<br>Estado: ".$estado;
                 echo($result);    
                 }
-                /*$nome = $_GET['nome'];
+                /*$nome = $_GET['nome']
                 echo("Seu nome é: ". $nome);*/
             }
             ?>
