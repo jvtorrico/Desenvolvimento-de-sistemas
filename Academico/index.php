@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        
        
         <script src="js/jquery.min.js" type="text/javascript"></script>
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
-        <meta charset="UTF-8"
+        <meta charset="UTF-8">
         <title>Sistema de ensino</title>   
         
     </head>
@@ -80,16 +80,16 @@
                 </tr>
             </table>
             <?php
-            if ($_GET) {
+            if ($_POST) {
                 
                 //print_r($_GET); //printa tudo do array
                 @$matricula /*nome da variáve*/= $_GET['matricula'/*índice da variável*/];
-                @$nome = $_GET['nome'];
-                @$turma = $_GET['turma'];
-                @$telefone = $_GET['telefone'];
-                @$endereco = $_GET['endereco'];
-                @$estado= $_GET['estado'];
-
+                @$nome = $_POST['nome'];
+                @$turma = $_POST['turma'];
+                @$telefone = $_POST['telefone'];
+                @$endereco = $_POST['endereco'];
+                @$estado= $_POST['estado'];
+                
                
                 
                 if(empty($matricula)||empty($nome)||empty($turma)||empty($telefone)||empty($endereco)||empty($estado)){
