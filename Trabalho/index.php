@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Trabalho de merda odeio DSI</title>
+        <title>Bicho Chique Petshop</title>
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <script src="../Buttons/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="../Buttons/js/jquery.min.js" type="text/javascript"></script>
