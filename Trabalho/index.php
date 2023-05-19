@@ -39,16 +39,16 @@
                     <div class="form-group">
                         <label>Serviços: </label>
                         <div class="checkbox">
-                            <label><input type="checkbox" name="servico" value="Banho e tosa"><b>Banho e tosa</b></label>
+                            <label><input type="checkbox" name="servico[]" value="Banho e tosa"><b>Banho e tosa</b></label>
                         </div>
                         <div class="checkbox">
-                            <label><input type="checkbox" name="servico" value="Corte de unhas"><b>Corte de unhas</b></label>
+                            <label><input type="checkbox" name="servico[]" value="Corte de unhas"><b>Corte de unhas</b></label>
                         </div>
                         <div class="checkbox">
-                            <label><input type="checkbox" name="servico" value="Limpeza de ouvidos"><b>Limpeza de ouvidos</b></label>
+                            <label><input type="checkbox" name="servico[]" value="Limpeza de ouvidos"><b>Limpeza de ouvidos</b></label>
                         </div>
                         <div class="checkbox">
-                            <label><input type="checkbox" name="servico" value="Vacinação"><b>Vacinação</b></label>
+                            <label><input type="checkbox" name="servico[]" value="Vacinação"><b>Vacinação</b></label>
                         </div>
                         <div class="form-group">
                             <label for="data">Data: </label>
@@ -56,7 +56,7 @@
                         </div>
                         <div class="form-group">
                             <label for="observacoes">Observações: </label>
-                            <textarea class="form-control" placeholder="Digite quaisquer observações"></textarea>
+                            <textarea class="form-control" name="observacoes" placeholder="Digite quaisquer observações"></textarea>
                         </div>
                         <input value="Enviar ordem de serviço"  class="btn btn-primary" type="submit">
                     </div>
@@ -66,7 +66,7 @@
 
 
 
-        </div>
+   
 
 
 
@@ -76,6 +76,25 @@
 
     <?php
     // put your code here
+    if($_POST){
+         @$nomecliente = $_POST['nome'];
+         @$telefone = $_POST['telefone'];
+         @$nomeanimal = $_POST['animal'];
+         @$servico = $_POST['servico'];
+         @$data = $_POST['data'];
+         @$observacoes = $_POST['observacoes'];
+         if(empty($nomecliente) || empty($telefone ) || empty($nomeanimal) || empty($servico)|| empty($data)){
+             echo('<div class="alert-danger">Preencher os campos obrigatórios. </div>');
+         }else {
+             echo("<fieldset> <legend class='alert-success'>Informações:</legend> "
+                     . "Nome do Cliente: ".$nomecliente. "<br>Telefone: ".$telefone.
+                            "<br>Nome do animal: ".$nomeanimal. "<br>Serviços escolhidos: ".implode(" + ", $servico).
+                            "<br>Data: ".$data.
+                            "<br>Observacoes: ".$observacoes."</fieldset>");
+         }
+         
+    }
+    
     ?>
 </body>
 </html>
